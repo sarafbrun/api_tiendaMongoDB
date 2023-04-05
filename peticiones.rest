@@ -1,0 +1,69 @@
+@host= http://localhost:3000
+@apiProducts = /api/products
+@apiUsers = /api/users
+
+### API PRODUCTS
+GET {{host}}{{apiProducts}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQyYzJlOTJhZWFjZDQ4OGQ1YmQzODllIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjgxMTMyOTM2LCJpYXQiOjE2ODA3MDA5MzZ9.T7SxNfzQLnUbHwsLhY4bpCFpyQkxD5fQylh5qvBa_Oo
+
+
+
+### GET 1 product
+GET {{host}}{{apiProducts}}/642ad7b8f014a0afc41ed527
+
+###
+GET {{host}}{{apiProducts}}/price/50
+
+### 
+GET host {{apiProducts}}/department/moda
+
+### POST
+POST {{host}}{{apiProducts}}
+Content-Type: application/json
+
+{
+    "name":"Pantalones vaqueros",
+    "description": "color azul desgastado",
+    "price": 30,
+    "department": "man",
+    "available": true,
+    "stock": 8
+}
+
+### PUT
+PUT {{host}}{{apiProducts}}/stock
+
+
+############## USERS ############
+
+POST {{host}}{{apiUsers}}/register
+Content-Type: application/json
+
+{
+    "username": "sara",
+    "email": "sara@yahoo.es",
+    "password": "12345",
+    "role": "admin",
+    "active": true
+}
+
+
+###
+POST {{host}}{{apiUsers}}/login
+Content-Type: application/json
+
+{
+    "email": "sara@gmail.com",
+    "password": "12345"
+}
+
+
+
+
+### GET api/users/buy/productID
+GET {{host}}{{apiUsers}}/buy/642ad7b0a214b1605d3637a5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQyYzJlOTJhZWFjZDQ4OGQ1YmQzODllIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjgxMTIxNzMyLCJpYXQiOjE2ODA2ODk3MzJ9.pqZL8mDwMcYrLH9iDCyScC514SprvAWW7f170Idjdrg
+
+###
+GET {{host}}{{apiUsers}}/cart
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQyYzJlOTJhZWFjZDQ4OGQ1YmQzODllIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjgxMTMyOTM2LCJpYXQiOjE2ODA3MDA5MzZ9.T7SxNfzQLnUbHwsLhY4bpCFpyQkxD5fQylh5qvBa_Oo
